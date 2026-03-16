@@ -5,3 +5,5 @@
 2026-03-14 14:54:12.457 | INFO     | app.routes:predicao:20 - Texto recebido: Livro bosta da peste | Sentimento: Negativo
 2026-03-14 14:54:27.095 | INFO     | app.routes:predicao:20 - Texto recebido: Sem uma opnião forma | Sentimento: Neutro
 2026-03-14 14:54:42.226 | INFO     | app.routes:predicao:20 - Texto recebido: 🤔 | Sentimento: Neutro
+2026-03-16 19:13:17.504 | INFO     | app.routes:home:11 - home executado
+2026-03-16 19:13:47.043 | INFO     | app.routes:predicao:20 - Texto recebido: livro ruim da peste | Sentimento: Negativo

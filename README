@@ -1,8 +1,6 @@
-Sentiment Analysis API
+API para análise de sentimento para livros
 
-API REST simples para análise de sentimentos de textos, desenvolvida com
-FastAPI. A API possui endpoints GET e POST e está preparada para
-integração com modelos de NLP.
+API REST para análise de sentimentos de textos para avaliação de livros
 
   ----------------------
   Estrutura do Projeto
@@ -44,10 +42,6 @@ source venv/bin/activate
   --------------------------
 
 pip install -r requirements.txt
-
-Exemplo de requirements.txt:
-
-fastapi uvicorn loguru pydantic
 
   -------------------
   4. Executar a API
@@ -110,7 +104,7 @@ Na interface /docs clique em:
 
 POST /sentiment
 
-Depois clique em “Try it out” e insira o texto:
+Depois clique em “Try it out” e insira o texto no form:
 
 { “text”: “Esse produto é maravilhoso” }
 
