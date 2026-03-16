@@ -14,47 +14,41 @@ sentiment_model.py │ └── logger.py │ ├── requirements.txt └─
   ---------------------
   1. Clonar o projeto
   ---------------------
-
-git clone cd sentiment_api
-
+```bash
+  git clone cd sentiment_api
+```
   ----------------------------------
   2. Criar ambiente virtual (venv)
   ----------------------------------
 
-Windows:
-
+  Windows:
+```bash
 python -m venv venv
-
+ ```
 Ativar:
 
-venv
-
-Linux / Mac:
-
-python3 -m venv venv
-
-Ativar:
-
-source venv/bin/activate
-
+```bash
+source venv/Scripts/activate
+```
   --------------------------
-  3. Instalar dependências
+  1. Instalar dependências
   --------------------------
 
+```bash
 pip install -r requirements.txt
-
+```
   -------------------
   4. Executar a API
   -------------------
 
 Rodar o servidor com:
-
+```bash
 uvicorn app.main:app --reload
-
+```
 O servidor iniciará em:
-
+```bash
 http://127.0.0.1:8000
-
+```
   ----------------------------
   5. Documentação automática
   ----------------------------
