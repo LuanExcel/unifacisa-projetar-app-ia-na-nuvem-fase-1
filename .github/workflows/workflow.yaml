@@ -1,0 +1,28 @@
+name: CI - FastAPI
+
+on:
+  push:
+    branches:
+      - main   # roda após merge na main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # Criando uma máquina vistual que vai ns disponibilizar com um sistema operacionalque no caso aqui é o ubuntu
+
+    steps: # passo a passo dentro dos jobs
+      - name: Clonar repositório # dando nome a etapa
+        uses: actions/checkout@v4 # ela faz um gitclone da branch main pra máquina criada
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with: # isso é uma forma de passar argumentos
+          python-version: '3.12' # versão do python a ser instalada
+
+      - name: Instalar dependências # nome para etapa de instalar as libs com requirements
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Testar aplicação (build)
+        run: |
+          python -c "from app.main import app"
