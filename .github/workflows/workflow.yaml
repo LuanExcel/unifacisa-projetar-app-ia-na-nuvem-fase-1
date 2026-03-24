@@ -3,7 +3,7 @@ name: CI - FastAPI
 on:
   push:
     branches:
-      - main   # roda após merge na main
+      - main   # roda após merge na main (rode sempre que algo entrar na main)
 
 jobs:
   build:
