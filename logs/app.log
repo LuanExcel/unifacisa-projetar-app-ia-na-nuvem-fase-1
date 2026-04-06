@@ -7,3 +7,13 @@
 2026-03-14 14:54:42.226 | INFO     | app.routes:predicao:20 - Texto recebido: 🤔 | Sentimento: Neutro
 2026-03-16 19:13:17.504 | INFO     | app.routes:home:11 - home executado
 2026-03-16 19:13:47.043 | INFO     | app.routes:predicao:20 - Texto recebido: livro ruim da peste | Sentimento: Negativo
+2026-03-27 19:33:02.544 | INFO     | app.routes:home:11 - home executado
+2026-03-27 19:33:28.506 | INFO     | app.routes:home:11 - home executado
+2026-03-27 19:36:45.498 | INFO     | app.routes:predicao:20 - Texto recebido: ruim demais | Sentimento: Negativo
+2026-04-01 20:59:42.879 | INFO     | app.routes:home:11 - home executado
+2026-04-01 21:00:07.761 | INFO     | app.routes:predicao:20 - Texto recebido: ruim | Sentimento: Negativo
+2026-04-01 21:18:41.648 | INFO     | app.routes:predicao:37 - Texto recebido: muito ruim em | Sentimento: Negativo
+2026-04-01 21:20:31.986 | INFO     | app.routes:predicao:38 - Texto recebido: péssimo | Sentimento: Negativo
+2026-04-01 21:48:15.156 | INFO     | app.routes:home:16 - home executado
+2026-04-06 19:33:49.357 | INFO     | app.routes:home:16 - home executado
+2026-04-06 19:58:26.619 | INFO     | app.routes:home:16 - home executado

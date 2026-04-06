@@ -15,9 +15,9 @@ logger.add(
 # 3. Configura o log em Arquivo com UTF-8 explícito
 logger.add(
     "logs/app.log", 
-    rotation="10 MB",       # Cria um novo arquivo a cada 10MB
-    retention="10 days",    # Mantém logs por 10 dias
-    encoding="utf-8",       # <--- ISSO resolve o problema dos acentos no arquivo
-    compression="zip",      # Compacta logs antigos
+    rotation="10 MB",       
+    retention="10 days",    
+    encoding="utf-8",       
+    compression="zip",
     level="INFO"
 )

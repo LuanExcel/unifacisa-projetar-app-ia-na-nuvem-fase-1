@@ -6,5 +6,6 @@ class TextRequest(BaseModel):
 
 
 class SentimentResponse(BaseModel):
+    id: int
     text: str
     sentiment: str
