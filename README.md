@@ -4,7 +4,7 @@
 ## Estrutura do Projeto
 
 sentiment_api/
-
+```
 sentiment_api/
 ├── app/
 │   ├── main.py
@@ -14,7 +14,7 @@ sentiment_api/
 │   └── logger.py
 ├── requirements.txt
 └── README.md
-
+```
 
 ## 1. Clonar o projeto
 

@@ -1,5 +1,5 @@
-from fastapi import APIRouter, Form, HTTPException
-from app.schemas import SentimentResponse
+from fastapi import APIRouter, HTTPException
+from app.schemas import TextRequest, SentimentResponse
 from app.sentiment_model import analise_sentimento
 from app.config_logs import logger
 from tinydb import TinyDB, Query 
@@ -17,26 +17,35 @@ def home():
     return {"status": "API funcionando"}
 
 # ================================================================
+
+
 @router.post("/sentiment", response_model=SentimentResponse)
-def predicao(text: str = Form(...)):
+def predicao(request: TextRequest):
 
-    sentiment = analise_sentimento(text)
+    text_content = request.text 
 
+    sentiment = analise_sentimento(text_content)
+
+    # Gerencia o banco de dados
     try:
         db = TinyDB(file)
-    except ValueError:
+    except (NameError, ValueError): 
+
         db = TinyDB('db.json') 
 
+    # Insere e recupera o ID
     temp_id = db.insert({
-            "texto": text,
+            "texto": text_content,
             "sentimento": sentiment
         })
 
+    # Atualiza o documento com o próprio ID
     db.update({"id": temp_id}, doc_ids=[temp_id])
 
+    # Retorna seguindo o seu SentimentResponse
     return {
         "id": temp_id,
-        "text": text,
+        "text": text_content,
         "sentiment": sentiment
     }
 # ================================================================
@@ -76,7 +85,7 @@ def buscar_por_id(id: int):
     )
 
 @router.put("/sentiments/{id}", response_model=SentimentResponse)
-def atualizar(id: int, text: str = Form(...)):
+def atualizar(id: int, request: TextRequest):
     db = TinyDB('db.json') 
     tabela = db.table('_default')
     
@@ -86,6 +95,8 @@ def atualizar(id: int, text: str = Form(...)):
 
     if not resultado:
         raise HTTPException(status_code=404, detail="Registro não encontrado")
+    
+    text = request.text
 
     novo_sentimento = analise_sentimento(text)
 
