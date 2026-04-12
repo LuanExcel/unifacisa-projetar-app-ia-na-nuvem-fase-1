@@ -17,4 +17,4 @@ ENV PYTHONPATH=/code
 EXPOSE 8000
 
 # 5. Comando aponta corretamente para a pasta app que foi copiada
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD uvicorn app.main:app --host 0.0.0.0 --port $PORT
