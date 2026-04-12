@@ -1,23 +1,20 @@
 # 1. Imagem base
 FROM python:3.12-slim
 
-# 2. Define o diretório de trabalho (onde tudo vai acontecer no Linux)
-WORKDIR /app
+# 1. Diretório base neutro no Linux, como /code
+WORKDIR /code
 
-# 3. Copia o arquivo de dependências (se você tiver um)
-# Se não tiver um requirements.txt, veja o passo abaixo
+# 2. Bixando libs
 COPY requirements.txt .
-
-# 4. Instala as bibliotecas necessárias
 RUN pip install --no-cache-dir -r requirements.txt
 
-# 5. Copia todo o conteúdo da sua pasta local para dentro do container
-# Isso inclui a pasta /app (com routes, schemas, etc) e o db.json
+# 3. Copia TODO o seu projeto para dentro de /code
 COPY . .
 
-# 6. Expõe a porta que o FastAPI usa (padrão 8000)
+# 4. Define o PYTHONPATH para o Python enxergar a pasta 'code' corretamente
+ENV PYTHONPATH=/code
+
 EXPOSE 8000
 
-# 7. Comando para rodar a API usando o Uvicorn
-# Ajuste 'main:app' para o nome do seu arquivo principal e nome da variável FastAPI
-CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
+# 5. Comando aponta corretamente para a pasta app que foi copiada
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]

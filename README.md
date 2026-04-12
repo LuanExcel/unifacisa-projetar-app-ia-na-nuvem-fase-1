@@ -122,3 +122,5 @@ Sentimento: positivo
   ------------------------
 
 FastAPI Uvicorn Pydantic Loguru
+
+
