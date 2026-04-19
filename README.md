@@ -1,4 +1,4 @@
-# API de Análise de Sentimentos
+# Análise de sentimento para livros
 
 Esta é uma API RESTful construída com FastAPI para realizar análise de sentimentos em textos fornecidos. Ela permite submeter textos para análise, armazenar os resultados em um banco de dados TinyDB e gerenciar esses registros.
 
@@ -54,14 +54,15 @@ Você pode rodar a aplicação de duas formas principais: localmente com Uvicorn
 Após instalar as dependências, você pode iniciar a API usando Uvicorn:
 
 ```bash
-uvicorn main:router --reload --port 8000
+uvicorn app.main:app --reload
 ```
+
 
 A API estará disponível em `http://localhost:8080`.
 
 ### Opção 2: Rodar com Docker
 
-Você pode puxar a imagem do Docker Hub e rodar a aplicação em um contêiner:
+Você pode puxar a imagem do Docker Hub e rodar a aplicação em um container:
 
 ```bash
 docker run -p 8080:8080 luanexcel/api-sentimento:v1
