@@ -57,11 +57,7 @@ Após instalar as dependências, você pode iniciar a API usando Uvicorn:
 uvicorn main:router --reload --port 8000
 ```
 
-*   `main:router`: Indica que o objeto `router` está no arquivo `main.py` (assumindo que o código fornecido está em `main.py`).
-*   `--reload`: Habilita o recarregamento automático do servidor em caso de alterações no código.
-*   `--port 8000`: Define a porta em que a API será executada (padrão é 8000).
-
-A API estará disponível em `http://127.0.0.1:8000`.
+A API estará disponível em `http://localhost:8080`.
 
 ### Opção 2: Rodar com Docker
 
@@ -85,12 +81,12 @@ Este projeto utiliza **GitHub Actions** para automação de CI/CD, garantindo qu
 
 ## Uso da API
 
-Você pode interagir com a API usando ferramentas como `curl` ou `httpie`, ou através da documentação interativa do Swagger UI (localmente em `http://127.0.0.1:8000/docs` ou no deploy do Render).
+Você pode interagir com a API usando ferramentas como `curl` ou através da documentação interativa do Swagger UI (localmente em `http://localhost:8080/docs` ou no deploy do Render).
 
 ### 1. Verificar Status da API
 
 ```bash
-curl http://127.0.0.1:8000/
+curl http://localhost:8080/
 ```
 
 **Resposta esperada:**
@@ -103,7 +99,7 @@ curl http://127.0.0.1:8000/
 ### 2. Analisar Sentimento de um Texto (`POST /sentiment`)
 
 ```bash
-curl -X POST http://127.0.0.1:8000/sentiment \
+curl -X POST http://localhost:8080/sentiment \
      -H "Content-Type: application/json" \
      -d '{"text": "Eu amo a nova funcionalidade!"}'
 ```
@@ -120,7 +116,7 @@ curl -X POST http://127.0.0.1:8000/sentiment \
 ### 3. Listar Todos os Sentimentos (`GET /sentiments`)
 
 ```bash
-curl http://127.0.0.1:8000/sentiments
+curl http://localhost:8080/sentiments
 ```
 
 **Resposta esperada:**
@@ -144,7 +140,7 @@ curl http://127.0.0.1:8000/sentiments
 Substitua `{id}` pelo ID do registro que você deseja buscar.
 
 ```bash
-curl http://127.0.0.1:8000/sentiments/1
+curl http://localhost:8080/sentiments/1
 ```
 
 **Resposta esperada:**
@@ -161,7 +157,7 @@ curl http://127.0.0.1:8000/sentiments/1
 Substitua `{id}` pelo ID do registro que você deseja atualizar.
 
 ```bash
-curl -X PUT http://127.0.0.1:8000/sentiments/1 \
+curl -X PUT http://localhost:8080/sentiments/1 \
      -H "Content-Type: application/json" \
      -d '{"text": "Eu realmente gostei da nova funcionalidade!"}'
 ```
@@ -180,7 +176,7 @@ curl -X PUT http://127.0.0.1:8000/sentiments/1 \
 Substitua `{id}` pelo ID do registro que você deseja deletar.
 
 ```bash
-curl -X DELETE http://127.0.0.1:8000/sentiments/1
+curl -X DELETE http://localhost:8080/sentiments/1
 ```
 
 **Resposta esperada:**
